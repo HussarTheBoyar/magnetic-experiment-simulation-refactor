@@ -1,0 +1,157 @@
+#layout-container {
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+}
+
+#paper-container {
+        flex-grow: 1;
+        height: 100vh;
+}
+
+#note-panel {
+        width: 220px;
+        background-color: #fdf6e3;
+        border-left: 1px solid #ccc;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+}
+
+#info-button {
+        margin-bottom: 10px;
+}
+
+#note-content {
+        font-size: 14px;
+        line-height: 1.4;
+        font-family: sans-serif;
+}
+
+.note-panel {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 300px;
+        height: fit-content;
+        background-color: #fffbe6;
+        padding: 16px;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        border-left: 1px solid #ccc;
+        overflow-y: auto;
+        z-index: 100;
+}
+
+.note-panel h2 {
+        margin-top: 0;
+}
+
+.note-panel p {
+        margin-bottom: 0;
+}
+
+body {
+        margin: 0;
+        font-family: sans-serif;
+        display: flex;
+}
+
+#sidebar {
+        width: 150px;
+        background: #eee;
+        padding: 1rem;
+        box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.dnd-rect {
+        padding: 0.5rem;
+        background: #ccc;
+        margin-bottom: 1rem;
+        cursor: grab;
+        text-align: center;
+        border-radius: 4px;
+}
+
+#speed-indicator {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #2c3e50;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 6px;
+        display: none;
+        font-size: 14px;
+        z-index: 1000;
+}
+
+/* styles.css */
+.magnetic-field-arrow {
+        position: absolute;
+        width: 20px;
+        height: 10px;
+        background: url('/assets/arrow-right.svg') no-repeat center;
+        background-size: contain;
+        animation: flow-right 2s linear infinite;
+        pointer-events: none;
+        z-index: 500;
+}
+
+.magnetic-field {
+        position: absolute;
+        pointer-events: none;
+        width: 120px;
+        height: 100px;
+        background: repeating-linear-gradient(90deg,
+                        rgba(0, 153, 255, 0.4),
+                        rgba(0, 153, 255, 0.4) 2px,
+                        transparent 2px,
+                        transparent 6px);
+        background-size: 20px 100%;
+        animation: field-flow 1s linear infinite;
+        z-index: 10;
+}
+
+.magnetic-field-arrow-svg {
+        position: absolute;
+        overflow: visible;
+        z-index: 500;
+        pointer-events: none;
+}
+
+.arrow-path {
+        fill: none;
+        stroke: rgba(0, 153, 255, 0.8);
+        stroke-width: 2;
+        stroke-dasharray: 10;
+        stroke-dashoffset: 0;
+        animation: flow-dash 1.5s linear infinite;
+        marker-end: url(#arrowhead);
+}
+
+svg.magnetic-field-arrow-svg::before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+}
+
+.magnetic-field-svg {
+        pointer-events: none;
+        z-index: 10;
+}
+
+
+@keyframes flow-right {
+        from {
+                transform: translateX(0);
+                opacity: 1;
+        }
+
+        to {
+                transform: translateX(60px);
+                opacity: 0;
+        }
+}

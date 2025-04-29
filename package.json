@@ -1,0 +1,21 @@
+{
+  "name": "jointjs-ts-dnd",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "yarn build && gh-pages -d dist"
+  },
+  "dependencies": {
+    "@joint/core": "^4.1.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "vite": "^6.3.3",
+    "gh-pages": "^5.0.0"
+  }
+}
