@@ -5,5 +5,5 @@ export default defineConfig({
   server: {
     port: 3000 // or any port you want
   },
-  base:'magnetic-experiment-simulation-refactor'
+  // base:'magnetic-experiment-simulation-refactor'
 })
